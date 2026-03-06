@@ -317,9 +317,10 @@ setTimeout(() => {
         // Auto-rotation and controls
         globe.controls().autoRotate = true;
         globe.controls().autoRotateSpeed = 1.0;
+        globe.controls().enableZoom = false; // Prevent size change on scroll
 
-        // Negative rotate speed to invert drag controls (dragging up moves object up)
-        globe.controls().rotateSpeed = -0.5;
+        // Set rotate speed to positive for proper drag controls mapping
+        globe.controls().rotateSpeed = 1.0;
 
         // Initial view facing Atlantic/Europe
         globe.pointOfView({ lat: 40, lng: -20, altitude: 2 }, 1000);
