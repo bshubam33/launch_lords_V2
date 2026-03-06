@@ -24,6 +24,27 @@ document.addEventListener("DOMContentLoaded", () => {
     // Register ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
+    // --- Mobile Menu Toggle ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+    const mobileNavBtns = document.querySelectorAll('.mobile-nav-btn');
+
+    if (menuToggle && mobileNavOverlay) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileNavOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNavOverlay.classList.contains('active') ? 'hidden' : '';
+        });
+
+        mobileNavBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileNavOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
     // 2. Initialize SplitType for typography reveals FIRST
     const splitTexts = new SplitType('.split-text', { types: 'words, chars' });
 
