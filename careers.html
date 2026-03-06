@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Launch Lords</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+
+    <!-- Animated Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <section class="hero spacer">
+        <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p class="overline">CAREERS</p>
+            <h1 class="hero-headline split-text">Postings <span class="gold-text">Coming Soon!</span></h1>
+            <div class="hero-bottom-area fade-up" style="margin-top: 2rem;">
+                <p class="hero-sub" style="margin-bottom: 2rem;">We are currently building out our team. Check back here
+                    regularly for new opportunities to join Launch Lords.</p>
+                <div class="cta-wrapper" style="justify-content: center;">
+                    <a href="index.html" class="primary-btn" style="text-decoration: none;">Return Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const splitTexts = new SplitType('.split-text', { types: 'words, chars' });
+
+            gsap.from(".hero-headline .char", {
+                y: '100%',
+                opacity: 0,
+                duration: 1,
+                stagger: 0.02,
+                ease: "power4.out"
+            });
+
+            gsap.from(".fade-up", {
+                y: 40,
+                opacity: 0,
+                duration: 1,
+                delay: 0.5,
+                ease: "power3.out"
+            });
+        });
+    </script>
+</body>
+
+</html>

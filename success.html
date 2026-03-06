@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Received | Launch Lords</title>
+    <!-- Modern Typography: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .success-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .success-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 4rem;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .success-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1.5rem;
+            font-family: var(--font-heading);
+            color: var(--text-color);
+        }
+
+        .success-message {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .return-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--text-color);
+            color: var(--bg-color);
+            font-weight: 600;
+            border-radius: 4px;
+            transition: transform 0.3s, background 0.3s;
+            text-decoration: none;
+        }
+
+        .return-btn:hover {
+            transform: translateY(-2px);
+            background: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <!-- Animated Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <nav class="navbar" style="justify-content: center;">
+        <div class="logo">
+            <a href="index.html">
+                <img src="./assets/logo.png" alt="Launch Lords Logo" class="official-logo">
+            </a>
+        </div>
+    </nav>
+
+    <main class="success-page">
+        <div class="success-card">
+            <h1 class="success-title">Submission Received</h1>
+            <p class="success-message">Thank you for reaching out to us. Launch Lords will be in touch with you shortly.
+            </p>
+            <a href="index.html" class="return-btn">Return to Launch Lords</a>
+        </div>
+    </main>
+</body>
+
+</html>

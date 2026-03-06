@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Lords | Healthcare AI Systems</title>
+    <!-- Modern Typography: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Lenis for smooth scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="loading dark-mode">
+
+    <!-- SVG Filters for complex liquid textures -->
+    <svg style="display: none;">
+        <filter id="liquid-marbling" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.01 0.015" numOctaves="3" result="noise" />
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 2 -0.5" in="noise"
+                result="coloredNoise" />
+            <feDisplacementMap in="SourceGraphic" in2="coloredNoise" scale="120" xChannelSelector="R"
+                yChannelSelector="G" />
+        </filter>
+    </svg>
+
+    <!-- Animated Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./assets/logo.png" alt="Launch Lords Logo" class="official-logo">
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-btn split-nav">About</a>
+            <a href="#solutions" class="nav-btn split-nav">Solutions</a>
+            <a href="#contact" class="nav-btn split-nav">Contact</a>
+        </div>
+    </nav>
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- HERO SECTION -->
+            <section class="hero spacer bottom-line">
+                <div class="hero-marquee">
+                    <div class="marquee-content">
+                        <span>LAUNCH LORDS</span>
+                        <span>LAUNCH LORDS</span>
+                        <span>LAUNCH LORDS</span>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-headline split-text">Stop Losing Patients to Broken Systems</h1>
+                    <div class="hero-bottom-area">
+                        <p class="hero-sub fade-up">Launch Lords builds agentic automation systems and
+                            conversion-focused websites for private healthcare practices
+                            so every patient inquiry is answered, handled, and turned into a booked appointment.</p>
+                        <div class="cta-wrapper fade-up">
+                            <button id="open-audit-modal-hero" class="primary-btn">Get Free Audit</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LOGO MARQUEE SECTION -->
+            <section class="logo-marquee-section bottom-line">
+                <p class="marquee-title fade-up">Trusted by the best</p>
+                <div class="marquee-wrapper fade-up">
+                    <div class="marquee-track track-right">
+                        <!-- Set 1 -->
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/Northgate Health Care.png"
+                                    alt="Northgate Health Clinic"></div>
+                            <p class="logo-name">Northgate<br>Health Clinic</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/Summitcare Medical Group.png"
+                                    alt="SummitCare Medical Group"></div>
+                            <p class="logo-name">SummitCare<br>Medical Group</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/greenfield Medical.png" alt="Greenfield Medical">
+                            </div>
+                            <p class="logo-name">Greenfield<br>Medical</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/healwell medical centre.png"
+                                    alt="HealWell Medical Centre"></div>
+                            <p class="logo-name">HealWell<br>Medical Centre</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/Clear View Primary Care.png"
+                                    alt="Clearview Primary Care"></div>
+                            <p class="logo-name">Clearview<br>Primary Care</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/Dublincare medical centre.png"
+                                    alt="DublinCare Medical Centre"></div>
+                            <p class="logo-name">DublinCare<br>Medical Centre</p>
+                        </div>
+                        <!-- Set 2 (Duplicate for scroll) -->
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/Northgate Health Care.png"
+                                    alt="Northgate Health Clinic"></div>
+                            <p class="logo-name">Northgate<br>Health Clinic</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/Summitcare Medical Group.png"
+                                    alt="SummitCare Medical Group"></div>
+                            <p class="logo-name">SummitCare<br>Medical Group</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/greenfield Medical.png" alt="Greenfield Medical">
+                            </div>
+                            <p class="logo-name">Greenfield<br>Medical</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/healwell medical centre.png"
+                                    alt="HealWell Medical Centre"></div>
+                            <p class="logo-name">HealWell<br>Medical Centre</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/Clear View Primary Care.png"
+                                    alt="Clearview Primary Care"></div>
+                            <p class="logo-name">Clearview<br>Primary Care</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/Dublincare medical centre.png"
+                                    alt="DublinCare Medical Centre"></div>
+                            <p class="logo-name">DublinCare<br>Medical Centre</p>
+                        </div>
+                    </div>
+
+                    <div class="marquee-track track-left">
+                        <!-- Set 1 -->
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/oakwell health practice.png"
+                                    alt="Oakwell Health Practice"></div>
+                            <p class="logo-name">Oakwell<br>Health Practice</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/rheincare medical.png" alt="RheinCare Medical">
+                            </div>
+                            <p class="logo-name">RheinCare<br>Medical</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/riverstone medical.png" alt="Riverstone Medical">
+                            </div>
+                            <p class="logo-name">Riverstone<br>Medical</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/vitalis medical centre.png"
+                                    alt="Vitalis Medical Centre"></div>
+                            <p class="logo-name">Vitalis<br>Medical Centre</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/novamed health centre.png"
+                                    alt="NovaMed Health Centre"></div>
+                            <p class="logo-name">NovaMed<br>Health Centre</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/oakridge Health.png" alt="Oakridge Health"></div>
+                            <p class="logo-name">Oakridge<br>Health</p>
+                        </div>
+                        <!-- Set 2 (Duplicate for scroll) -->
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/oakwell health practice.png"
+                                    alt="Oakwell Health Practice"></div>
+                            <p class="logo-name">Oakwell<br>Health Practice</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/rheincare medical.png" alt="RheinCare Medical">
+                            </div>
+                            <p class="logo-name">RheinCare<br>Medical</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/riverstone medical.png" alt="Riverstone Medical">
+                            </div>
+                            <p class="logo-name">Riverstone<br>Medical</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/vitalis medical centre.png"
+                                    alt="Vitalis Medical Centre"></div>
+                            <p class="logo-name">Vitalis<br>Medical Centre</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/novamed health centre.png"
+                                    alt="NovaMed Health Centre"></div>
+                            <p class="logo-name">NovaMed<br>Health Centre</p>
+                        </div>
+                        <div class="logo-card">
+                            <div class="logo-box"><img src="./logos/oakridge Health.png" alt="Oakridge Health"></div>
+                            <p class="logo-name">Oakridge<br>Health</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- THE HIDDEN PROBLEM SECTION -->
+            <section class="problem-intro spacer bottom-line" id="about">
+                <div class="intro-grid">
+                    <div class="intro-empty"></div>
+                    <div class="intro-text">
+                        <h2 class="section-title split-text">Why Clinics Lose Patients <br><span class="subtle">(Even
+                                When They Don’t Realize It)</span></h2>
+                        <p class="fade-up">Most healthcare businesses believe their biggest problem is getting more
+                            patients. In reality, clinics usually face one of two operational problems.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="problem-details spacer bottom-line">
+                <div class="z-pattern-module parallax-module">
+                    <div class="module-visual visual-left gs-float">
+                        <div class="visual-shape shape-sphere"></div>
+                        <div class="huge-number">01</div>
+                    </div>
+                    <div class="module-content fade-up">
+                        <h3 class="module-title">Patients Are Lost Inside the System</h3>
+                        <p>Some clinics receive steady patient inquiries but lose them because the system handling those
+                            inquiries is inefficient.</p>
+                        <ul class="issue-list">
+                            <li>unanswered incoming calls</li>
+                            <li>delayed responses to patient inquiries</li>
+                            <li>inefficient appointment booking processes</li>
+                        </ul>
+                        <p class="conclusion">Patients show interest, but the clinic system fails to capture them.
+                            Demand exists, but the system leaks it.</p>
+                    </div>
+                </div>
+
+                <div class="z-pattern-module parallax-module reverse">
+                    <div class="module-content fade-up">
+                        <h3 class="module-title">The Website Doesn’t Generate Patients</h3>
+                        <p>Other clinics struggle because their online presence does not convert visitors into booked
+                            appointments.</p>
+                        <ul class="issue-list">
+                            <li>websites that act like brochures instead of booking systems</li>
+                            <li>unclear or difficult appointment booking paths</li>
+                            <li>no structured patient journey guiding visitors to book</li>
+                        </ul>
+                        <p class="conclusion">In this case, the problem is not marketing. It is conversion
+                            infrastructure.</p>
+                    </div>
+                    <div class="module-visual visual-right gs-float-alt">
+                        <div class="huge-number">02</div>
+                        <div class="visual-shape shape-pyramid"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="transition-banner spacer bottom-line">
+                <h2 class="massive-statement split-text">When the system is weak, even strong marketing cannot fix the
+                    problem.</h2>
+                <p class="fade-up banner-sub">Before bringing more patients in, a clinic must ensure every inquiry can
+                    be captured and converted into an appointment.</p>
+            </section>
+
+            <!-- REVENUE LEAKAGE -->
+            <section class="revenue-section spacer bottom-line">
+                <h2 class="xl-title split-text">Small Operational Gaps Quietly Cost Clinics Real Revenue</h2>
+
+                <div class="grid-2-col">
+                    <div class="col-left fade-up">
+                        <p class="lead-text">Most clinics believe growth comes from more marketing. But many patients
+                            are already trying to reach the clinic — and the system simply fails to capture them.</p>
+                        <div class="ticker-list">
+                            <div class="t-line">A call goes unanswered.</div>
+                            <div class="t-line">A response arrives too late.</div>
+                            <div class="t-line">A visitor cannot easily book.</div>
+                        </div>
+                        <p>When that happens, patients rarely wait. They choose another clinic.</p>
+                    </div>
+
+                    <div class="col-right bg-card fade-up">
+                        <h3 class="card-sm-title">A Simple Reality</h3>
+                        <p>If a clinic receives 30–40 patient inquiries per week and just 5 of them fail to convert,
+                            that becomes:</p>
+                        <div class="data-points">
+                            <div class="dp">
+                                <strong class="dp-num">~20</strong>
+                                <span class="dp-label">Lost consultations / month</span>
+                            </div>
+                            <div class="dp">
+                                <strong class="dp-num">200+</strong>
+                                <span class="dp-label">Lost consultations / year</span>
+                            </div>
+                        </div>
+                        <p class="italic-warn">These losses rarely appear in reports. They happen quietly in daily
+                            operations.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- THE SYSTEM APPROACH -->
+            <section class="approach-section spacer bottom-line" id="solutions">
+                <div class="approach-header">
+                    <h2 class="split-text">The System Approach</h2>
+                    <p class="fade-up">At Launch Lords, we focus on fixing the systems behind patient acquisition and
+                        handling. Instead of relying on manual processes, we build structured systems that ensure
+                        patient inquiries are captured, responded to, and converted into booked appointments.</p>
+                </div>
+
+                <div class="z-pattern-module parallax-module">
+                    <div class="module-visual visual-left gs-float">
+                        <div class="visual-shape shape-cube"></div>
+                    </div>
+                    <div class="module-content fade-up">
+                        <h3 class="module-title">Agentic AI Systems</h3>
+                        <p>Operational systems that handle patient communication and repetitive administrative
+                            workflows.</p>
+                        <ul class="check-list">
+                            <li>answer patient inquiries instantly</li>
+                            <li>capture calls that would otherwise be missed</li>
+                            <li>manage appointment booking and rescheduling</li>
+                            <li>automate reminders and follow-ups</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="z-pattern-module parallax-module">
+                    <div class="module-visual visual-left gs-float">
+                        <div class="visual-shape shape-torus"></div>
+                    </div>
+                    <div class="module-content fade-up">
+                        <h3 class="module-title">Conversion Websites</h3>
+                        <p>Websites structured to turn visitors into booked consultations.</p>
+                        <ul class="check-list">
+                            <li>guide patients toward booking an appointment</li>
+                            <li>reduce friction in the booking process</li>
+                            <li>present clear service information and trust signals</li>
+                            <li>work seamlessly across mobile devices</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HOW IT WORKS -->
+            <section class="how-it-works spacer bottom-line">
+                <div class="intro-grid">
+                    <div class="intro-empty">
+                        <h2 class="side-title split-text">How It Works</h2>
+                    </div>
+                    <div class="process-steps">
+
+                        <div class="step fade-up">
+                            <div class="step-line">
+                                <span class="s-num">01</span>
+                                <h3>System Audit</h3>
+                            </div>
+                            <p>We review how your clinic currently handles patient inquiries (incoming calls, website
+                                booking flow, response times, bottlenecks).</p>
+                        </div>
+
+                        <div class="step fade-up">
+                            <div class="step-line">
+                                <span class="s-num">02</span>
+                                <h3>System Design</h3>
+                            </div>
+                            <p>We design the infrastructure needed to improve patient handling (AI-powered reception
+                                systems, workflow automation, conversion-focused websites).</p>
+                        </div>
+
+                        <div class="step fade-up">
+                            <div class="step-line">
+                                <span class="s-num">03</span>
+                                <h3>Deployment</h3>
+                            </div>
+                            <p>Systems are implemented and integrated. Inquiries are captured faster, booking becomes
+                                easier, staff spend less time on repetitive tasks.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- OUR TRACK RECORD -->
+            <section class="track-record-section spacer bottom-line">
+                <div class="track-header text-center fade-up">
+                    <p class="overline">OUR TRACK RECORD</p>
+                    <h2 class="xl-title gold-title split-text">Proven <span
+                            class="italic-serif gold-text">Results</span></h2>
+                    <p class="track-sub">We are dedicated to building long-term partnerships and generating measurable
+                        operational<br>efficiency for our clients.</p>
+                </div>
+                <div class="metrics-grid fade-up">
+                    <div class="metric-item">
+                        <h3 class="metric-value gold-text">$100,000</h3>
+                        <p class="metric-label">DOLLARS SAVED</p>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <h3 class="metric-value gold-text">32+</h3>
+                        <p class="metric-label">RELATIONSHIPS BUILT</p>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <h3 class="metric-value gold-text">40+</h3>
+                        <p class="metric-label">PROJECTS COMPLETED</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WHY US & CTA -->
+            <section class="why-us spacer">
+                <h2 class="xl-title text-center split-text">Why Healthcare Businesses Choose Launch Lords</h2>
+
+                <div class="features-row fade-up">
+                    <div class="f-col">
+                        <h4>Healthcare-focused</h4>
+                        <p>Built around real clinic workflows, not generic business automation.</p>
+                    </div>
+                    <div class="f-col">
+                        <h4>Operational styling</h4>
+                        <p>The focus is on improving how inquiries turn into appointments.</p>
+                    </div>
+                    <div class="f-col">
+                        <h4>Simple implementation</h4>
+                        <p>Systems designed to support staff, not complicate operations.</p>
+                    </div>
+                    <div class="f-col">
+                        <h4>Conversion-first</h4>
+                        <p>Websites structured to guide patients toward booking.</p>
+                    </div>
+                </div>
+
+                <div class="final-cta-area parallax-module" id="contact">
+                    <div class="final-cta-grid">
+                        <div class="globe-wrapper">
+                            <div class="cta-globe-col" id="globeViz"></div>
+                            <div class="globe-clients">
+                                <div class="client-locations">
+                                    <span><b class="gold-text">&bull;</b> Ireland</span>
+                                    <span><b class="gold-text">&bull;</b> London</span>
+                                    <span><b class="gold-text">&bull;</b> Belgium</span>
+                                    <span><b class="gold-text">&bull;</b> Germany</span>
+                                    <span><b class="gold-text">&bull;</b> India</span>
+                                    <span><b class="gold-text">&bull;</b> USA</span>
+                                </div>
+                                <p class="globe-subtitle"><em>Our client base</em></p>
+                            </div>
+                        </div>
+                        <div class="cta-inner">
+                            <div class="inline-audit-card">
+                                <h2 class="modal-title" id="audit">Send us a message</h2>
+                                <form id="inlineAuditForm" class="contact-form">
+                                    <div class="form-group">
+                                        <label for="inlineName">Name *</label>
+                                        <input type="text" id="inlineName" placeholder="Your name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inlineEmail">Email *</label>
+                                        <input type="email" id="inlineEmail" placeholder="your@email.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inlineCompany">Company</label>
+                                        <input type="text" id="inlineCompany" placeholder="Your company name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inlineService">Service of Interest *</label>
+                                        <select id="inlineService" required>
+                                            <option value="" disabled selected>Select a service</option>
+                                            <option value="Agentic AI">Agentic AI</option>
+                                            <option value="Website">Website</option>
+                                            <option value="Audit">Audit</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inlineMessage">Message</label>
+                                        <textarea id="inlineMessage" rows="4"
+                                            placeholder="Tell us about your project..."></textarea>
+                                    </div>
+                                    <button type="submit" class="primary-btn submit-btn">Launch Audit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="bottom-line top-line footer-expanded">
+                <div class="footer-wrap">
+
+                    <div class="f-top-content">
+                        <div class="f-column">
+                            <h4 class="f-heading">Team</h4>
+                            <div class="f-person">
+                                <span class="f-name" style="display: flex; align-items: center;">
+                                    Shubhankar Bagchi
+                                    <a href="https://www.instagram.com/shubhankarbagchi.ai/" target="_blank"
+                                        aria-label="Instagram"
+                                        style="color: inherit; opacity: 0.7; transition: opacity 0.3s; display: flex;"
+                                        onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            style="width: 14px; height: 14px; margin-left: 6px;">
+                                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                        </svg>
+                                    </a>
+                                </span>
+                                <span class="f-role">Founder & CEO</span>
+                            </div>
+                            <div class="f-person">
+                                <span class="f-name" style="display: flex; align-items: center;">
+                                    Kartikey Awasthi
+                                    <a href="https://www.linkedin.com/in/kartikeyawasthi/" target="_blank"
+                                        aria-label="LinkedIn"
+                                        style="color: inherit; opacity: 0.7; transition: opacity 0.3s; display: flex;"
+                                        onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            style="width: 14px; height: 14px; margin-left: 6px;">
+                                            <path
+                                                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                            </path>
+                                            <rect x="2" y="9" width="4" height="12"></rect>
+                                            <circle cx="4" cy="4" r="2"></circle>
+                                        </svg>
+                                    </a>
+                                </span>
+                                <span class="f-role">Co-founder</span>
+                            </div>
+                        </div>
+
+                        <div class="f-column">
+                            <h4 class="f-heading">Connect</h4>
+                            <div class="f-socials-alt">
+                                <a href="https://x.com/launchlords" target="_blank" aria-label="X (Twitter)">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                        <path
+                                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                    </svg>
+                                </a>
+                                <a href="https://www.instagram.com/launch_lords/" target="_blank"
+                                    aria-label="Instagram">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                </a>
+                                <a href="https://www.linkedin.com/company/112704272/admin/dashboard/" target="_blank"
+                                    aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </a>
+                                <a href="https://www.facebook.com/profile.php?id=61587816046655&sk=about_details"
+                                    target="_blank" aria-label="Facebook">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                            </path>
+                                        </svg>
+                                </a>
+                            </div>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">Queries:
+                                <a href="mailto:founders@launchlords.com"
+                                    style="color: var(--text-light); text-decoration: none;">founders@launchlords.com</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="f-bottom">
+                        <div class="f-bottom-left">
+                            <h2 class="f-brand-text split-text">LAUNCH LORDS</h2>
+                            <p class="f-copyright">© 2026 All rights reserved. <span class="dot-sep">•</span> <a
+                                    href="privacy-policy.html" target="_blank">Privacy Policy</a> <span
+                                    class="dot-sep">•</span> <a href="terms.html" target="_blank">Terms of Service</a>
+                            </p>
+                        </div>
+                        <div class="f-bottom-right">
+                            <a href="#contact" class="nav-btn split-nav">Contact</a>
+                            <a href="careers.html" target="_blank" class="nav-btn split-nav">Careers <span
+                                    class="small-tag" style="text-transform:lowercase">(under dev)</span></a>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- REQUEST AUDIT MODAL -->
+    <div id="auditModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="close-audit-modal">&times;</button>
+            <h2 class="modal-title">Request Audit</h2>
+            <p class="modal-desc">Fill out the form below to receive a free audit for your clinic.</p>
+            <form id="auditForm" class="contact-form">
+                <div class="form-group">
+                    <label for="auditName">Name</label>
+                    <input type="text" id="auditName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="auditEmail">Email</label>
+                    <input type="email" id="auditEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="auditCompany">Company</label>
+                    <input type="text" id="auditCompany" placeholder="Company Name">
+                </div>
+                <div class="form-group">
+                    <label for="auditService">Service of Interest</label>
+                    <select id="auditService" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Agentic AI">Agentic AI</option>
+                        <option value="Website">Website</option>
+                        <option value="Audit">Audit</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="auditMessage">Message</label>
+                    <textarea id="auditMessage" rows="4" placeholder="How can we help?"></textarea>
+                </div>
+                <button type="submit" class="primary-btn submit-btn">Launch Audit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- GSAP & SplitType -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+
+    <!-- Three.js & Globe.gl -->
+    <script src="https://unpkg.com/three"></script>
+    <script src="https://unpkg.com/globe.gl"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
