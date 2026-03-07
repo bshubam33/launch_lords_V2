@@ -4,6 +4,7 @@
     --text-color: #ffffff;
     --text-muted: #a0a0a0;
     --text-subtle: rgba(255, 255, 255, 0.4);
+    --text-light: #e5e5e5;
     --border-color: rgba(255, 255, 255, 0.15);
 
     --font-heading: 'Inter', sans-serif;
@@ -58,7 +59,7 @@ body.loading {
     left: -50%;
     width: 200%;
     height: 200%;
-    z-index: 9999;
+    z-index: 900;
     pointer-events: none;
     opacity: 0.05;
     background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
@@ -96,6 +97,12 @@ body.loading {
 a {
     color: var(--text-color);
     text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Typography Scale */
@@ -158,6 +165,11 @@ h4 {
 /* Spacing & Dividers */
 .spacer {
     padding: 10rem 5%;
+}
+
+.spacer section,
+section {
+    scroll-margin-top: 90px;
 }
 
 .bottom-line {
@@ -1497,5 +1509,32 @@ h4 {
 
     .logo-name {
         font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+
+    .official-logo {
+        height: 48px;
+    }
+
+    .hero {
+        padding-top: 12vh;
+        min-height: 80vh;
+    }
+
+    .hero-headline {
+        font-size: clamp(2.2rem, 12vw, 64px);
+    }
+
+    .hero-sub {
+        font-size: 1rem;
+    }
+
+    .spacer {
+        padding: 4rem 5%;
     }
 }
