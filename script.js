@@ -185,128 +185,108 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // --- MODAL LOGIC ---
-const modal = document.getElementById('auditModal');
-const openBtns = [document.getElementById('open-audit-modal-hero'), document.getElementById('open-audit-modal')];
-const closeBtn = document.getElementById('close-audit-modal');
-const form = document.getElementById('auditForm');
+    const modal = document.getElementById('auditModal');
+    const openBtns = [document.getElementById('open-audit-modal-hero'), document.getElementById('open-audit-modal')];
+    const closeBtn = document.getElementById('close-audit-modal');
 
-if (modal && closeBtn && form) {
-    openBtns.forEach(btn => {
-        if (btn) {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                modal.classList.add('active');
+    const WEBHOOK_URL = "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTZmMDYzNzA0M2Q1MjZmNTUzMjUxMzci_pc";
+
+    async function sendDataToWebhook(formData, submitBtn) {
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.style.opacity = '0.7';
+        submitBtn.disabled = true; // Disable button to prevent multiple submissions
+
+        try {
+            const response = await fetch(WEBHOOK_URL, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
             });
+
+            if (response.ok) {
+                submitBtn.textContent = 'Sent!';
+                submitBtn.style.background = '#47ff75';
+                submitBtn.style.color = '#000';
+                // Optionally redirect or show success message
+                setTimeout(() => {
+                    window.location.href = 'success.html';
+                }, 1000);
+            } else {
+                console.error("Webhook submission error:", response.statusText);
+                submitBtn.textContent = 'Error. Try again.';
+                submitBtn.style.opacity = '1';
+                submitBtn.disabled = false;
+            }
+        } catch (error) {
+            console.error("Network or other error:", error);
+            submitBtn.textContent = 'Error. Try again.';
+            submitBtn.style.opacity = '1';
+            submitBtn.disabled = false;
         }
-    });
+    }
 
-    closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-    });
+    // Audit Form (Modal)
+    const auditForm = document.getElementById('auditForm');
+    if (modal && closeBtn && auditForm) {
+        openBtns.forEach(btn => {
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modal.classList.add('active');
+                });
+            }
+        });
 
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
+        closeBtn.addEventListener('click', () => {
             modal.classList.remove('active');
-        }
-    });
+        });
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = form.querySelector('.submit-btn');
-        const originalText = btn.textContent;
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
 
-        const name = document.getElementById('auditName').value || 'N/A';
-        const email = document.getElementById('auditEmail').value || 'N/A';
-        const company = document.getElementById('auditCompany').value || 'N/A';
-        const service = document.getElementById('auditService').value || 'N/A';
-        const msg = document.getElementById('auditMessage').value || '';
+        auditForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = auditForm.querySelector('.submit-btn');
 
-        btn.textContent = 'Launching...';
-        btn.style.opacity = '0.7';
+            const formData = {
+                Name: document.getElementById('auditName').value || 'N/A',
+                Email: document.getElementById('auditEmail').value || 'N/A',
+                Company: document.getElementById('auditCompany').value || 'N/A',
+                Service: document.getElementById('auditService').value || 'N/A',
+                Message: document.getElementById('auditMessage').value || ''
+            };
 
-        fetch("https://formsubmit.co/ajax/founders@launchlords.com", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                _subject: `New Audit Request from ${name} at ${company}`,
-                Name: name,
-                Email: email,
-                Company: company,
-                Service: service,
-                Message: msg
-            })
-        })
-            .then(response => response.json())
-            .then(data => {
-                btn.textContent = 'Audit Requested!';
-                btn.style.background = '#47ff75';
-                btn.style.color = '#000';
+            await sendDataToWebhook(formData, submitBtn);
+        });
+    }
 
-                setTimeout(() => {
-                    window.location.href = 'success.html';
-                }, 1000);
-            })
-            .catch(error => {
-                console.error("Form submission error:", error);
-                btn.textContent = 'Error. Try again.';
-                btn.style.opacity = '1';
-            });
-    });
-}
+    // Inline Audit Form
+    const inlineAuditForm = document.getElementById('inlineAuditForm');
+    if (inlineAuditForm) {
+        inlineAuditForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = inlineAuditForm.querySelector('.submit-btn');
 
-const inlineForm = document.getElementById('inlineAuditForm');
-if (inlineForm) {
-    inlineForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = inlineForm.querySelector('.submit-btn');
-        const originalText = btn.textContent;
+            const formData = {
+                Name: document.getElementById('inlineName').value || 'N/A',
+                Email: document.getElementById('inlineEmail').value || 'N/A',
+                Company: document.getElementById('inlineCompany').value || 'N/A',
+                Service: document.getElementById('inlineService').value || 'N/A',
+                Message: document.getElementById('inlineMessage').value || ''
+            };
 
-        const name = document.getElementById('inlineName').value || 'N/A';
-        const email = document.getElementById('inlineEmail').value || 'N/A';
-        const company = document.getElementById('inlineCompany').value || 'N/A';
-        const service = document.getElementById('inlineService').value || 'N/A';
-        const msg = document.getElementById('inlineMessage').value || '';
+            await sendDataToWebhook(formData, submitBtn);
+        });
+    }
 
-        btn.textContent = 'Launching...';
-        btn.style.opacity = '0.7';
-
-        fetch("https://formsubmit.co/ajax/founders@launchlords.com", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                _subject: `New Audit Request from ${name} at ${company}`,
-                Name: name,
-                Email: email,
-                Company: company,
-                Service: service,
-                Message: msg
-            })
-        })
-            .then(response => response.json())
-            .then(data => {
-                btn.textContent = 'Audit Requested!';
-                btn.style.background = '#47ff75';
-                btn.style.color = '#000';
-
-                setTimeout(() => {
-                    window.location.href = 'success.html';
-                }, 1000);
-            })
-            .catch(error => {
-                console.error("Form submission error:", error);
-                btn.textContent = 'Error. Try again.';
-                btn.style.opacity = '1';
-            });
-    });
-}
-
-// --- GLOBE VISUALIZATION ---
+    // --- GLOBE VISUALIZATION ---
 setTimeout(() => {
     const globeContainer = document.getElementById('globeViz');
     if (globeContainer && typeof Globe !== 'undefined') {
